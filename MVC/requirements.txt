@@ -2,3 +2,4 @@ pipFlask
 Flask-WTF
 Jinja2
 Flask-DebugToolbar
+psycopg2
