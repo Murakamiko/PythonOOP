@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MVC and Security exercice</title>
+    </head>
+
+    <body>
+        <h1>This is the contact formulaire</h1>
+        
+        <form id="contact" method="post">
+            
+            <input type="text" name="username" placeholder="text" required>
+            <input type="text" name="userpassword" placeholder="text" required>
+            <input type="text" name="email" placeholder="text" required>
+            <input type="text" name="userdescription" placeholder="text" required>
+    
+            <input type="submit" value="Send">
+        </form>
+        {% if errors %}
+            {% for key, val in errors.items() %}
+                {{ key }} {{ val }}
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
