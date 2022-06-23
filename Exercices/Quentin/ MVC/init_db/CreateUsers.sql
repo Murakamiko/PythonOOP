@@ -1,5 +1,5 @@
 CREATE TABLE contact(
-userid INT NOT NULL,
+userid SERIAL,
 name VARCHAR(255) NOT NULL,
 firstname VARCHAR(255) NOT NULL,
 password INT NOT NULL,
@@ -9,9 +9,13 @@ PRIMARY KEY (userid)
 );
 
 CREATE TABLE roles(
-    iduser INT NOT NULL,
-    poste VARCHAR(255) NOT NULL,
-    CONSTRAINT fkuserid
-        FOREIGN KEY(iduser)
-            REFERENCES contact(userid)
+    roleid SERIAL PRIMARY KEY,
+    poste VARCHAR(80) UNIQUE NOT NULL,
+);
+
+CREATE TABLE userrole(
+    roleid INT NOT NULL,
+    userid INT NOT NULL,
+    CONSTRAINT fk_userroleid FOREIGN KEY (roleid) REFERENCES roles(roleid)
+    CONSTRAINT fk_useruserid FOREIGN KEY (roleid) REFERENCES 
 );
